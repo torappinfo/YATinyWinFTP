@@ -16,9 +16,12 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
+        with:
+          path: .
 
       - name: Clone Asio headers
         run: git clone --depth 1 https://github.com/chriskohlhoff/asio.git
+        working-directory: .
   
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
