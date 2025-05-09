@@ -9,7 +9,7 @@ namespace TinyWinFTP
 		for (std::size_t i = 0; i < pool_size; ++i)
 		{
 			std::shared_ptr<asio::io_context> newService = std::make_shared<asio::io_context>();
-			std::shared_ptr<auto> newWork = asio::make_work_guard(*newService);
+			executor_work_guard<io_context::executor_type> newWork = asio::make_work_guard(*newService);
 			ioServices.push_back(newService);
 			works.push_back(newWork);
 		}
