@@ -34,7 +34,7 @@ namespace TinyWinFTP
 		std::vector<std::shared_ptr<asio::io_context> > ioServices;
 
 		/// The work that keeps the io_contexts running.
-		std::vector<executor_work_guard<io_context::executor_type> > works;
+          std::vector<asio::executor_work_guard<asio::io_context::executor_type> > works;
 
 		/// The next io_context to use for a connection.
 		std::size_t nextIoService;
