@@ -20,7 +20,7 @@ jobs:
           path: .
 
       - name: Clone Asio headers
-        run: git clone --depth 1 https://github.com/chriskohlhoff/asio.git
+        run: pwd; git clone --depth 1 https://github.com/chriskohlhoff/asio.git
         working-directory: .
   
       - name: Setup MSBuild
