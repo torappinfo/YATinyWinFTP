@@ -30,8 +30,7 @@ jobs:
           msbuild-architecture: x86
 
       - name: Build
-        run: msbuild YATinyWinFTP.sln /p:Configuration=Release /p:Platform=x86 /p:PlatformToolset=v141_xp /p:WindowsTargetPlatformVersion=8.1 /p:AdditionalOptions="/MT /Zc:threadSafeInit-"
-
+        run: msbuild YATinyWinFTP.sln /p:Configuration=Release /p:Platform=x86
       - name: List files recursively
         run: |
           echo "::group::Current directory files"
