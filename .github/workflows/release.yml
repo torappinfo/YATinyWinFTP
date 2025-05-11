@@ -26,10 +26,11 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
-          vs-version: '[17.0,18.0)' 
+          vs-version: '[15.0,16.0)'
+          msbuild-architecture: x86
 
       - name: Build
-        run: msbuild YATinyWinFTP.sln /p:Configuration=Release /p:Platform=x86
+        run: msbuild YATinyWinFTP.sln /p:Configuration=Release /p:Platform=x86 /p:PlatformToolset=v141_xp /p:WindowsTargetPlatformVersion=8.1 /p:AdditionalOptions="/MT /Zc:threadSafeInit-"
 
       - name: List files recursively
         run: |
